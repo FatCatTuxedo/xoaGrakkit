@@ -1,3 +1,4 @@
+// load all the shit we need
 const stdlib = require("@grakkit/stdlib-paper");
 require("@grakkit/js");
 const { type, load } = require("@grakkit/stdlib-paper");
@@ -35,6 +36,14 @@ function locationRegions(location) {
     .createQuery()
     .getApplicableRegions(BukkitAdapter.adapt(location));
 }
+
+globalThis.stdlib = stdlib;
+globalThis.ItemStack = ItemStack;
+globalThis.locationRegions = locationRegions;
+globalThis.Material = Material;
+globalThis.Action = Action;
+
+// Load our scripts
 require('./adminCommands.js');
 require('./spawnCanal.js');
 
